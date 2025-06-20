@@ -1,0 +1,42 @@
+# PreparePrompt Inputs
+prompt_id: depupgrade
+# prompt_template_file: your-prompt-template-here
+
+# CallLLM Inputs
+openai_api_key: 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
+# google_api_key: required-for-gemini
+# model: gpt-4o
+# client_base_url: https://api.openai.com/v1
+# Example HF model
+# client_base_url: https://api-inference.huggingface.co/models/codellama/CodeLlama-70b-Instruct-hf/v1
+# model: codellama/CodeLlama-70b-Instruct-hf
+# model_temperature: 0.2
+# model_top_p: 0.95
+# model_max_tokens: 2000
+
+# Do impact analysis after dependency upgrades to modify source code
+analyze_impact: false
+
+# CommitChanges Inputs
+disable_branch: false
+
+# CreatePR Inputs
+disable_pr: false
+force_pr_creation: true
+# github_api_key: required-for-github-scm
+# gitlab_api_key: required-for-gitlab-scm
+
+bitbucket_url: https://api.bitbucket.org
+bitbucket_access_token: ATBBE5jqQqgxQcdWxtagZ369w55eF2EF968F
+bitbucket_user: autoremediatex-admin
+repo_url: https://autoremediatex-admin@bitbucket.org/autoremediatex/call_quality.git
+branch: main
+sbom_vdr_file: /Users/pramilasingh/workspace/workspace_pradip_new/call_quality/sbom-universal.vdr.json
+
+iq_server: "http://localhost:8070"
+username: "admin"
+password: "admin123"
+app_id: "your_application_internal_id"
+report_id: "your_report_id"
+cyclo_version: "1.5"
+

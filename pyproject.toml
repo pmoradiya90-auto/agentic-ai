@@ -1,0 +1,51 @@
+[project]
+name = "bnpp-agentic-ai"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "pramila16",email = "pramilasingh16@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.9,<4.0"
+dependencies = [
+    "patchwork-cli @ file:///Users/pramilasingh/workspace/workspace_pradip_agentic_ai/patchwork",
+    "atlassian-python-api (>=4.0.4,<5.0.0)",
+    "requests (>=2.32.3,<3.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "agenticwork", from = "."}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+agenticwork = 'agenticwork.app:cli'
+
+[tool.poe.env]
+PROJ_PATH.default = "agenticwork"
+TEST_PATH.default = "tests"
+
+[tool.poe.tasks]
+#mypy = "mypy ${PROJ_PATH}"
+lint = [
+    { cmd = "autoflake --recursive ${PROJ_PATH} ${TEST_PATH}" },
+    { cmd = "isort ${PROJ_PATH} ${TEST_PATH}" },
+    { cmd = "black ${PROJ_PATH} ${TEST_PATH}" }
+]
+
+[tool.black]
+target-version = ['py310']
+line-length = 120
+
+[tool.isort]
+profile = "black"
+
+[tool.autoflake]
+in-place = true
+remove-all-unused-imports = true
+expand-star-imports = true
+ignore-init-module-imports = true
+
